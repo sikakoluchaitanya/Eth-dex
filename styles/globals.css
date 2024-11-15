@@ -14,6 +14,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .new_margin_top {
   margin-top: 1rem;
 }
@@ -25,7 +26,7 @@
 .new_button {
   border: none;
   color: #fff;
-  background-image: linear-gradient(30deg, #6008eb, #980bf7);
+  background-image: linear-gradient(30deg, #ff6347, #32cd32); /* Neon orange and green gradient */
   border-radius: 20px;
   background-size: 100% auto;
   font-family: inherit;
@@ -43,19 +44,17 @@
 
 @keyframes pulse512 {
   0% {
-    box-shadow: 0 0 0 0 #05bada66;
+    box-shadow: 0 0 0 0 rgba(255, 99, 71, 0.5); /* Orange glow */
   }
-
   70% {
-    box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    box-shadow: 0 0 0 10px rgba(50, 205, 50, 0.2); /* Green glow */
   }
-
   100% {
-    box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    box-shadow: 0 0 0 0 rgba(50, 205, 50, 0);
   }
 }
 
-/* //TYPE 2 BUTTON */
+/* TYPE 2 BUTTON */
 .type_2_button {
   font-family: PlusJakartaSans, -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Cantarell, Helvetica Neue, Ubuntu, sans-serif;
@@ -66,17 +65,80 @@
   border-radius: 0.4rem;
   font-weight: 600;
   padding: 0 1.2rem;
-  color: #ddd;
+  color: #fff;
   border: none;
   box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
-  background: #6008eb;
+  background: #fff498; /* Neon pink */
 }
 
 .type_2_followers {
   font-size: 0.8rem;
-  color: #7f7f7f;
+  color: #ffff00; /* Bright yellow */
 }
 
 .type_2_button:hover {
-  background: #2b2a2a;
+  background: #800080; /* Purple */
+}
+
+/* From Uiverse.io by Shoh2008 */
+.loader {
+  width: 48px;
+  height: 48px;
+  background: #8a2be2; /* Blue-violet */
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotationBack 1s ease-in-out infinite reverse;
+}
+
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  transform: rotate(45deg);
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: #ff4500; /* Orange-red */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: #00fa9a; /* Neon green */
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+:root {
+  --background-color: #2e1c47; /* Dark purple */
+  --text-color: #fffb00; /* Bright yellow */
+}
+
+body.dark-mode {
+  --background-color: #1c0f2a; /* Darker purple */
+  --text-color: #00fa9a; /* Neon green */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
